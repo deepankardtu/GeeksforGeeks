@@ -1,0 +1,18 @@
+def LeftRotateArray (arr,d):
+    n=len(arr)
+    reversearray(arr,0,d-1)
+    reversearray(arr,d,n-1)
+    reversearray(arr,0,n-1)
+        
+def reversearray(arr,start,end):
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]  #Simultaneous assignment of values, saves creation of an extra variable 'temp'
+        start = start+1
+        end = end-1   
+        
+
+
+arr = [1,2,3,4,5,6,7]
+LeftRotateArray(arr,3)
+for i in range(7):
+    print ("% d"% arr[i], end =" ")
